@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日期差计算 - 新伦智算</title>
+<meta name="description" content="计算两个日期相差天数、时分秒">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif;background:#f5f7fb;color:#1e293b}
+.topbar{background:#0B2A5B;color:#fff;padding:8px 0;font-size:12px}.wrap{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between}
+.nav{background:#0B6BFF;color:#fff;position:sticky;top:0;z-index:99;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.nav .wrap{height:58px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:20px;font-weight:800}.menu{display:flex;gap:18px}.menu a{color:#fff;text-decoration:none;font-size:14px}
+.breadcrumb{max-width:1200px;margin:12px auto 0;padding:0 20px;font-size:13px;color:#64748b}.breadcrumb a{color:#0B6BFF;text-decoration:none}
+.container{max-width:1200px;margin:12px auto;display:flex;gap:18px;padding:0 20px;align-items:flex-start}
+.main{flex:1;background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06);overflow:hidden}
+.main-head{padding:20px 24px;border-bottom:1px solid #f1f5f9}.main-head h1{font-size:20px}.main-head p{font-size:13px;color:#64748b;margin-top:6px;line-height:1.6}
+.main-body{padding:22px}
+.sidebar{width:290px;display:flex;flex-direction:column;gap:14px;position:sticky;top:72px}
+.card{background:#fff;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.06);padding:16px}
+.card h3{font-size:13px;margin-bottom:10px;border-left:3px solid #0B6BFF;padding-left:8px}
+.link-list a{display:block;padding:6px 0;font-size:12px;color:#334155;text-decoration:none;border-bottom:1px dashed #f1f5f9}
+.link-list a:hover{color:#0B6BFF}
+.input{width:100%;padding:11px 13px;border:1px solid #e2e8f0;border-radius:9px;font-size:14px;outline:none}
+.input:focus{border-color:#0B6BFF;box-shadow:0 0 0 3px rgba(11,107,255,.12)}
+.btn{background:#0B6BFF;color:#fff;border:none;padding:10px 16px;border-radius:9px;font-size:13px;cursor:pointer;font-weight:600}
+.btn:hover{background:#0958d6}.btn-sec{background:#f1f5f9;color:#334155}
+.result{background:#f8fafc;border:1px solid #e2e8f0;border-radius:9px;padding:13px;font-size:13px;margin-top:12px}
+.kv{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid #f1f5f9;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.footer{max-width:1200px;margin:28px auto;padding:18px;text-align:center;font-size:12px;color:#94a3b8}
+textarea.input{resize:vertical}
+@media(max-width:900px){.container{flex-direction:column}.sidebar{width:100%;position:static}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap"><span>新伦智算 - 免费在线工具 </span><span>纯静态 多页面 SEO友好</span></div></div>
+<div class="nav"><div class="wrap"><div class="logo"> 新伦智算</div><div class="menu"><a href="../index.html">首页</a><a href="../index.html#life">生活查询</a><a href="../index.html#net">网络工具</a><a href="../index.html#web">站长工具</a><a href="../index.html#text">文本工具</a></div></div></div>
+<div class="breadcrumb"><a href="../index.html">首页</a> &gt; 日期差计算</div>
+<div class="container">
+<div class="main"><div class="main-head"><h1>日期差计算</h1><p>计算两个日期相差天数、时分秒</p></div><div class="main-body"><input id="d1" class="input" type="date" value="2024-01-01"><input id="d2" class="input" type="date" style="margin-top:8px" value=""><button class="btn" style="margin-top:8px" onclick="diff()">计算差值</button><div id="out"></div><script>document.getElementById('d2').valueAsDate=new Date();function diff(){let a=new Date(document.getElementById('d1').value);let b=new Date(document.getElementById('d2').value);let d=Math.abs(b-a);let days=Math.floor(d/86400000);document.getElementById('out').innerHTML='<div class="result"><div class="kv"><span>相差天数</span><b>'+days+'天</b></div><div class="kv"><span>相差小时</span><b>'+(days*24)+'小时</b></div><div class="kv"><span>相差周</span><b>'+(days/7).toFixed(1)+'周</b></div></div>'}diff();</script></div></div>
+<div class="sidebar">
+<div class="card"><h3>网络工具</h3><div class="link-list"><a href="ip-calculator.html">IP计算器</a><a href="mac-lookup.html">MAC查询</a><a href="port-lookup.html">端口查询</a><a href="subnet-mask.html">掩码转换</a><a href="password-generator.html">密码生成</a><a href="qrcode.html">二维码</a></div></div>
+<div class="card"><h3>生活查询</h3><div class="link-list"><a href="phone-lookup.html">手机归属地</a><a href="idcard.html">身份证解析</a><a href="bmi.html">BMI计算</a><a href="date-diff.html">日期差计算</a><a href="calendar.html">万年历</a><a href="rate.html">汇率换算(演示)</a></div></div>
+<div class="card"><h3>站长/开发</h3><div class="link-list"><a href="md5.html">MD5加密</a><a href="base64.html">BASE64</a><a href="url-encode.html">URL编解码</a><a href="html-js.html">HTML/JS互转</a><a href="json-format.html">JSON格式化</a><a href="color-picker.html">配色工具</a></div></div>
+<div class="card"><h3>文本工具</h3><div class="link-list"><a href="text-diff.html">文本对比</a><a href="word-count.html">字数统计</a><a href="case-convert.html">大小写转换</a><a href="text-dedup.html">去重/排序</a></div></div>
+</div>
+</div>
+<div class="footer"> | 28工具全部可用 | 纯静态部署 Copyright 2026</div>
+</body>
+</html>
